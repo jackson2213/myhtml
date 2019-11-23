@@ -7,6 +7,13 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 </head>
 <body>
+
+ 
+<div>
+<audio autoplay="autoplay" loop=""><source src="music.mp3"></audio>。
+</div>  
+
+
 <div id="react">
     <div class="out_front">
         <img src="./images/1.jpg" class="out_pic">
@@ -182,6 +189,27 @@
 
 <div class='margin-bottom:50px'></div>
 
+
+<script type="text/javascript">
+  function audioAutoPlay(id) {
+        var audio = document.getElementById(id);
+        audio.play();
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            audio.play();
+        }, false);
+    }
+    audioAutoPlay('media');
+
+    $(function() {
+        var audio = $('#media');
+        audio[0].play();
+        $("#audio_btn").bind('click', function() {
+            $(this).hasClass("off") ? ($(this).addClass("play_yinfu").removeClass("off"), $("#yinfu").addClass("rotate"), $("#media")[0].play()) : ($(this).addClass("off").removeClass("play_yinfu"), $("#yinfu").removeClass("rotate"),
+$("#media")[0].pause());
+        });
+
+    });
+</script>
 
 </body>
 </html>
